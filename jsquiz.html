@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Which Side of TikTok Are You...</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+body {
+background-image: url("ttlogo.jpg");
+font-family: sans-serif;
+}
+
+#main {
+width: 79%;
+margin: auto;
+padding: 10px;
+background-color: grey;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 10px;
+padding: 5px;
+padding-top: 15px;
+height: 100px;
+background-color: grey;
+border: 1px black solid;
+border-radius: 10px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-size: 22px;
+  padding-top: 15px;
+}
+
+label {
+width: 300px;
+display: inline-block;
+padding-bottom: 20px;
+align-content: center;
+padding-right: 10px;
+color: white;
+font-size: 19px;
+}
+
+label:active {
+  color: pink;
+}
+button {
+display: block;
+margin-top: 20px;
+color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 0;
+  font-size: 18px;
+}
+
+button:hover,
+button:focus {
+  color: #999;
+}
+
+button:active {
+  background-color: white;
+  color: pink;
+  outline: 1px solid black;
+}
+
+@media screen and (max-width: 780px) {
+
+h1 {
+  font-size: 25px;
+}
+
+}
+
+}
+@media screen and (max-width: 540px) {
+  h1 {
+    font-size: 25px;
+  }
+
+
+
+}
+
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>Which side of TikTok are you on?</h1></div>
+
+<form  id="form1">
+<p>How old are you?</p>
+<label><input type="radio" name="age" id="young" value="2" />under 18</label>
+<label><input type="radio" name="age" id="mid" value="3" />19-30</label>
+<label><input type="radio" name="age" id="old" value="1" />30+</label>
+
+<p>How long do you scroll through TikTok?</p>
+<label><input type="radio" name="length" id="hr" value="1" />Less than an hour</label>
+<label><input type="radio" name="length" id="hrs" value="2" />1-2 hours</label>
+<label><input type="radio"  name="length" id="thrs" value="3" />3+ hours</label>
+
+<p>When do you usually watch TikToks?</p>
+<label><input type="radio" name="time" id="morn" value="1" />Morning</label>
+<label><input type="radio" name="time" id="noon" value="2" />Afternoon</label>
+<label><input type="radio" name="time" id="night" value="3" />Night</label>
+
+<p>What's <strong><em>~fruity~</em></strong> to you? </p>
+<label><input type="radio" name="fruit" id="fruit" value="2" />Something that describes a fruit</label>
+<label><input type="radio" name="fruit" id="gay" value="3" />LGBTQ+ related</label>
+<label><input type="radio" name="fruit" id="confused" value="1" />Is it not just something that relates to food?</label>
+
+<p>How do you feel about frogs?</p>
+<label><input type="radio" name="frog" id="amph" value="2" />They're cool amphibians!</label>
+<label><input type="radio" name="frog" id="pet" value="3" />OMG! I want one as a pet!</label>
+<label><input type="radio" name="frog" id="idk" value="1" />I don't know the difference between frogs and toads</label>
+
+<p>Feelings on capitalism?</p>
+<label><input type="radio" name="capitalism" id="nothot" value="2" />I don't know, never put much thought on it.</label>
+<label><input type="radio" name="capitalism" id="hate" value="3" />DESTROY IT!</label>
+<label><input type="radio" name="capitalism" id="love" value="1" />It's what I know, and it has been working well for the economy.</label>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+
+       if(document.querySelector('input[name = "age"]:checked') &&
+          document.querySelector('input[name = "length"]:checked') &&
+          document.querySelector('input[name = "time"]:checked') &&
+          document.querySelector('input[name = "fruit"]:checked') &&
+          document.querySelector('input[name = "frog"]:checked') &&
+          document.querySelector('input[name = "capitalism"]:checked')
+
+         ){
+
+
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);
+
+	  length = parseInt(document.querySelector('input[name = "length"]:checked').value);
+
+	  time = parseInt(document.querySelector('input[name = "time"]:checked').value);
+
+    fruit = parseInt(document.querySelector('input[name = "fruit"]:checked').value);
+
+    frog = parseInt(document.querySelector('input[name = "frog"]:checked').value);
+
+    capitalism = parseInt(document.querySelector('input[name = "capitalism"]:checked').value);
+
+
+
+
+	   total= age + length + time + fruit + frog + capitalism;
+
+
+
+	   if(total < 7) {
+document.getElementById("answer2").innerHTML = "Oh no! You're on straight TikTok :( Hope you get better soon! <br /> <img src = 'gws.jpeg' width = '300px'> ";
+}
+
+   if(total >=7 && total < 13) {
+document.getElementById("answer2").innerHTML = "You're both on straight and gay TikTok! Hopefully if you interact with the right videos, you get to be on the right TikTok! <br /> <img src = 'close.gif' width = '300px'>";
+}
+
+	if(total >=13) {
+document.getElementById("answer2").innerHTML = "You're on gay TikTok! Welcome to the club where we're slightly mentally ill and have much better humor than the rest of the people on TikTok! <br /> <img src = 'yay.jpeg'width = '300px'>";
+}
+}
+
+else {
+alert("Fill out all questions before submitting.");
+}
+
+
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
